@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <title> title </title>
-    <style>
-      img { display: block; margin: 0px auto; }
-    </style>
-  </head>
-  <body>
-  </body>
+<html>
+<head>
+    <title>채팅</title>
+</head>
+<body>
+    <div id="chat"></div>
+    <form onsubmit="sendMessage(); return false;">
+        <input type="text" id="message">
+        <button type="submit">보내기</button>
+    </form>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/send', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    var response = JSON.parse(this.responseText);
+                    document.getElementById("chat").innerHTML += response.message + "<br>";
+                }
+            };
+            xhr.send("message=" + message);
+            document.getElementById("message").value = "";
+        }
+    </script>
+</body>
 </html>
