@@ -1,1 +1,39 @@
+/* styles.css */
 
+/* 전체적인 스타일 */
+body {
+  background-image: url("https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg"); /* 링크로부터 강아지 이미지 적용 */
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* 동적인 요소 */
+.dynamic-shape {
+  width: 100px;
+  height: 100px;
+  background-color: #ff7f50; /* 아름다운 동적인 색상 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 추가 스타일 */
+section {
+  margin-top: 50px;
+  text-align: center;
+}
