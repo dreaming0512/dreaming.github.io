@@ -1,30 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>채팅</title>
+  <meta charset="UTF-8">
+  <title>삶이란 무엇인가</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="chat"></div>
-    <form onsubmit="sendMessage(); return false;">
-        <input type="text" id="message">
-        <button type="submit">보내기</button>
-    </form>
-
-    <script>
-        function sendMessage() {
-            var message = document.getElementById("message").value;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/send', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    var response = JSON.parse(this.responseText);
-                    document.getElementById("chat").innerHTML += response.message + "<br>";
-                }
-            };
-            xhr.send("message=" + message);
-            document.getElementById("message").value = "";
-        }
-    </script>
+  <header>
+    <h1>삶이란 무엇인가</h1>
+  </header>
+  <main>
+    <section>
+      <h2>삶에 관한 인터넷 정보</h2>
+      <ul>
+        <li>첫 번째 요약</li>
+        <li>두 번째 요약</li>
+        <li>세 번째 요약</li>
+        <li>네 번째 요약</li>
+        <li>다섯 번째 요약</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
