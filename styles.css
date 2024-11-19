@@ -16,7 +16,7 @@ body {
   flex-direction: column; /* 타이틀 아래에 이미지가 오도록 세로 방향으로 배치 */
   align-items: center; /* 가운데 정렬 */
   justify-content: flex-start; /* 컨테이너 상단에 정렬 */
-  padding-top: 20px; /* 타이틀 위의 여백을 줄이기 위해 padding-top 추가 */
+  padding-top: 10px; /* 타이틀 위의 여백을 줄이기 위해 padding-top 추가 */
 }
 
 /* 제목 스타일 */
